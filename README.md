@@ -1,4 +1,4 @@
-# PediatricBP
+# Pediatric Hypertension Status
 
 Childhood hypertension status is determined from systolic and diastolic blood pressure, age, sex, and, height percentiles. This results in hundreds of potential hypertension thresholds. The first R script(CHTNsa.Rdata) takes individual values as an input while the second (CHTNdf.Rdata) works on a dataframe.
 
