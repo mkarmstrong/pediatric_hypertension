@@ -5,7 +5,7 @@ Childhood hypertension status is determined from systolic and diastolic blood pr
 **Important:** 
 Because pediatric hypertension is based on normative values of blood pressure by age, sex, and height, we need to call to some external data which provides these normative values. These data can be found in published work by Flynn et al. [1]. I have extracted and reorganized the relevant data into a form usable by the functions presented here. You can get the file (BPTABLES.rds) from this github page. The functions presented here will not work without this file and you will need to manually edit a file path within the functions that calls to this file.
 
-Inputs for CHTNsa() are as follows:
+Inputs for `CHTNsa()` are as follows:
 
 -   age: in years
 -   sex: 1 (men) and 2 (women)
@@ -47,7 +47,7 @@ It is important that your dataframe contains the following variables with (exact
 Apply the function to the data as follows:
 
 ```
-results <- CHBP(mydata)
+results <- CHTNdf(mydata)
 ```
 
 Values returned by the function:
@@ -59,4 +59,5 @@ Values returned by the function:
 
 My coding here may not be perfect and please check values returned with validated online hypertension calculators. The functions here are for research purposes only and are not fit for clinical use. Enjoy!
 
-**References** Flynn JT, et al. (2017). Clinical Practice Guideline for Screening and Management of High Blood Pressure in Children and Adolescents. Pediatrics, 140(3), e20171904.
+**References** 
+1. Flynn JT, et al. (2017). Clinical Practice Guideline for Screening and Management of High Blood Pressure in Children and Adolescents. Pediatrics, 140(3), e20171904.
