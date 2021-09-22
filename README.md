@@ -1,9 +1,14 @@
 # Pediatric Hypertension Status
 
-Childhood hypertension status is determined from systolic and diastolic blood pressure, age, sex, and, height percentiles. This results in hundreds of potential hypertension thresholds. The first R script (CHTNsa.Rdata/.R) takes individual values as an input while the second (CHTNdf.Rdata/.R) works on a dataframe.
+Childhood hypertension status is determined from systolic and diastolic blood pressure, age, sex, and, height percentiles. This results in hundreds of potential hypertension thresholds. The first R script (CHTNsa.R) takes individual values as an input while the second (CHTNdf.R) works on a dataframe.
+
+Load the functions from Github:
+`devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNsa.R")`
+`devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNdf.R")`
+
 
 **Important:** 
-Because pediatric hypertension is based on normative values of blood pressure by age, sex, and height, we need to call to some external data which provides these normative values. These data can be found in published work by Flynn et al. [1]. I have extracted and reorganized the relevant data into a form usable by the functions presented here. You can get the file (BPTABLES.rds) from this github page. The functions presented here will not work without this file and you will need to manually edit a file path within the functions that calls to this file.
+Because pediatric hypertension is based on normative values of blood pressure by age, sex, and height, we need to call to a dataframe which provides these normative values. These data can be found in published work by Flynn et al. [1]. I have extracted and reorganized the relevant data into a form usable by the functions presented here. You can get the file (BPTABLES.csv) from this github page. Currently, the these functions load the data from my Github page, but this makes the functions run slow. It is recomended that you save the BPTABLES.csv file locally and change the file path within the function.
 
 Inputs for `CHTNsa()` are as follows:
 
@@ -25,7 +30,10 @@ CHTNsa(age = 9,
 
 The function returns the hypertension status for both systolic and diastolic blood pressure (something not all calculators do) and plots the values in relation to the guideline cut-offs.
 
-The second function (CHTNdf.Rdata) is a little more complex but also more comprehensive and returns a data frame with the results.
+![alt text](https://github.com/mkarmstrong/PediatricBP/blob/main/PedsHypertension.png)
+
+
+The second function (CHTNdf.R) is a little more complex but also more comprehensive and runs on a data frame.
 
 It is important that your dataframe contains the following variables with (exact) column labels:
 
