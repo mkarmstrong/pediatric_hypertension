@@ -1,6 +1,6 @@
 # Pediatric Hypertension Status
 
-Childhood hypertension status is determined from systolic and diastolic blood pressure, age, sex, and, height percentiles. This results in hundreds of potential hypertension thresholds. The first R script(CHTNsa.Rdata) takes individual values as an input while the second (CHTNdf.Rdata) works on a dataframe.
+Childhood hypertension status is determined from systolic and diastolic blood pressure, age, sex, and, height percentiles. This results in hundreds of potential hypertension thresholds. The first R script (CHTNsa.Rdata/.R) takes individual values as an input while the second (CHTNdf.Rdata/.R) works on a dataframe.
 
 **Important:** 
 Because pediatric hypertension is based on normative values of blood pressure by age, sex, and height, we need to call to some external data which provides these normative values. These data can be found in published work by Flynn et al. [1]. I have extracted and reorganized the relevant data into a form usable by the functions presented here. You can get the file (BPTABLES.rds) from this github page. The functions presented here will not work without this file and you will need to manually edit a file path within the functions that calls to this file.
