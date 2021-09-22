@@ -114,17 +114,31 @@ CHTNsa <- function(age, sex, systolic, diastolic, height) {
     spdplot <- cbind(splot, dplot)
     
     
-    matplot(spdplot$age, spdplot[,c(-1,-6)], 
-            main="SBP & DBP cut offs",
-            type = "l",
-            lwd = 2,
-            lty = c(1,2,2,1,1,2,2,1),
-            col = c(3,3,2,2,3,3,2,2),
-            xaxp  = c(2,17,15), #2 to 17 with 15 between
-            ylab="mmHg",
-            xlab="Age (y)")
-    points(ag, sbp, pch = 20, cex=2, col = "black")
-    points(ag, dbp, pch = 20, cex=2, col = "black")
+    matplot(
+      spdplot$age,
+      spdplot[, c(-1, -6)],
+      main = "SBP & DBP cut offs",
+      type = "l",
+      lwd = 2.5,
+      lty = c(1, 3, 3, 1, 1, 3, 3, 1),
+      col = c(
+        "seagreen4",
+        "seagreen4",
+        "firebrick",
+        "firebrick",
+        "seagreen4",
+        "seagreen4",
+        "firebrick",
+        "firebrick"
+      ),
+      xaxp  = c(2, 17, 15),
+      #2 to 17 with 15 between
+      ylab = "mmHg",
+      xlab = "Age (y)"
+    )
+    grid()
+    points(ag, sbp, pch = 8, cex=1.5, col = "dodgerblue3",lwd = 2.5)
+    points(ag, dbp, pch = 8, cex=1.5, col = "dodgerblue3",lwd = 2.5)
     
   }
   
