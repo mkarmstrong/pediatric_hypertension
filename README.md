@@ -3,8 +3,10 @@
 Childhood hypertension status is determined from systolic and diastolic blood pressure, age, sex, and, height percentiles. This results in hundreds of potential hypertension thresholds. The first R script (CHTNsa.R) takes individual values as an input while the second (CHTNdf.R) works on a dataframe.
 
 Load the functions from Github:
-`devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNsa.R")`
-`devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNdf.R")`
+```
+devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNsa.R")
+devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNdf.R")
+```
 
 
 **Important:** 
@@ -12,23 +14,23 @@ Because pediatric hypertension is based on normative values of blood pressure by
 
 Inputs for `CHTNsa()` are as follows:
 
--   age: in years
--   sex: 1 (men) and 2 (women)
--   height: in cm
--   systolic blood pressure: in mmHg
--   diastolic blood pressure: in mmHg
+-   **age:** in years
+-   **sex:** 1 (men) and 2 (women)
+-   **height:** in cm
+-   **systolic:** BP (systolic) in mmHg
+-   **diastolic:** BP (diastolic) in mmHg
 
 Take an example: If you had data on a 9 year old girl with a height of 163.6 cm and systolic and diastolic blood pressure of 110 and 64 mmHg, respectively, you would call the function as follows:
 
 ```
 CHTNsa(age = 9, 
-        sex = 2, 
-        height = 163.6,
-        systolic = 110, 
-        diastolic = 64)
+       sex = 2, 
+       height = 163.6,
+       systolic = 110, 
+       diastolic = 64)
 ```
 
-The function returns the hypertension status for both systolic and diastolic blood pressure (something not all calculators do) and plots the values in relation to the guideline cut-offs.
+The function returns the hypertension status for both systolic and diastolic blood pressure (something not all calculators do) and plots the values in relation to the guideline cut-offs (as reported in Flyn et al.[1].
 
 ![alt text](https://github.com/mkarmstrong/PediatricBP/blob/main/PedsHypertension.png)
 
@@ -55,7 +57,11 @@ It is important that your dataframe contains the following variables with (exact
 Apply the function to the data as follows:
 
 ```
-results <- CHTNdf(mydata)
+# Use AHA adult gidlines for individuals >= 13y
+results <- CHTNdf(mydata, simple = T)
+
+# Use height and sex percentiles for individuals >= 13y (up to age 18y).
+results <- CHTNdf(mydata, simple = F) 
 ```
 
 Values returned by the function:
