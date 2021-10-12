@@ -30,7 +30,7 @@ CHTNsa(age = 9,
        diastolic = 64)
 ```
 
-The function returns the hypertension status for both systolic and diastolic blood pressure (something not all calculators do) and plots the values in relation to the guideline cut-offs (as reported in Flyn et al.[1].
+The function returns the hypertension status for both systolic and diastolic blood pressure (something not all calculators do) and plots the values in relation to the guideline cut-offs (as reported in Flyn et al.[1]).
 
 ![alt text](https://github.com/mkarmstrong/PediatricBP/blob/main/PedsHypertension.png)
 
