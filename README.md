@@ -3,7 +3,8 @@
 Childhood hypertension status is determined from systolic and diastolic blood pressure, age, sex, and, height percentiles. This results in hundreds of potential hypertension thresholds. The first R script (CHTNsa.R) takes individual values as an input while the second (CHTNdf.R) works on a dataframe.
 
 Load the functions from Github:
-```
+
+```R
 devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNsa.R")
 devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/main/CHTNdf.R")
 ```
@@ -22,7 +23,7 @@ Inputs for `CHTNsa()` are as follows:
 
 Take an example: If you had data on a 9 year old girl with a height of 163.6 cm and systolic and diastolic blood pressure of 110 and 64 mmHg, respectively, you would call the function as follows:
 
-```
+```R
 CHTNsa(age = 9, 
        sex = 2, 
        height = 163.6,
@@ -56,7 +57,7 @@ It is important that your dataframe contains the following variables with (exact
 
 Apply the function to the data as follows:
 
-```
+```R
 # Use AHA adult gidlines for individuals >= 13y
 results <- CHTNdf(mydata, simple = T)
 
@@ -71,7 +72,7 @@ Values returned by the function:
 -   1 = STAGE 1
 -   2 = STAGE 2
 
-My coding here may not be perfect and please check values returned with validated online hypertension calculators. The functions here are for research purposes only and are not fit for clinical use. Enjoy!
+Please check values returned by this function with validated online hypertension calculators. The functions here are for research purposes only and are not fit for clinical use. Enjoy!
 
 **References** 
 1. Flynn JT, et al. (2017). Clinical Practice Guideline for Screening and Management of High Blood Pressure in Children and Adolescents. Pediatrics, 140(3), e20171904.
