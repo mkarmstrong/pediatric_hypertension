@@ -12,6 +12,9 @@ devtools::source_url("https://raw.githubusercontent.com/mkarmstrong/PediatricBP/
 
 **Important:** 
 Because pediatric hypertension is based on normative values of blood pressure by age, sex, and height, we need to call to a dataframe which provides these normative values. These data can be found in published work by Flynn et al. [1]. I have extracted and reorganized the relevant data into a form usable by the functions presented here. You can get the file (BPTABLES.csv) from this github page. Currently, the these functions load the data from my Github page, but this makes the functions run slow. It is recomended that you save the BPTABLES.csv file locally and change the file path within the function.
+<br/><br/>
+
+**FUNCTION 1**
 
 Inputs for `CHTNsa()` are as follows:
 
@@ -35,6 +38,9 @@ The function returns the hypertension status for both systolic and diastolic blo
 
 ![alt text](https://github.com/mkarmstrong/PediatricBP/blob/main/PedsHypertension.png)
 
+<br/><br/>
+
+**FUNCTION 2**
 
 The second function (CHTNdf.R) is a little more complex but also more comprehensive and runs on a data frame.
 
